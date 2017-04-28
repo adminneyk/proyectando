@@ -1,12 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login extends CI_Controller {
-        function __construct() {
+class Perfiles extends CI_Controller {
+    function __construct() {
         parent::__construct();
         $this->load->helper('url');
     }
-	/**
+
+    /**
 	 * Index Page for this controller.
 	 *
 	 * Maps to the following URL
@@ -24,6 +25,6 @@ class Login extends CI_Controller {
 	public function index()
 	{
                 $this->load->helper('url');
-		$this->load->view('Usuarios/formulario');
+		$this->load->view('Usuarios/perfiles');
 	}
 }

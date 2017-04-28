@@ -5,6 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <head>
         <meta charset="utf-8">
         <title>Welcome to CodeIgniter</title>
+        <link rel="stylesheet" href="<?= base_url() ?>asset/css/estilos.css">
         <script src="//cdn.ckeditor.com/4.6.2/basic/ckeditor.js"></script>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -66,3 +67,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script> <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </body>
 </html>
+
+<a href="<?=base_url()?>home">Base URL</a>

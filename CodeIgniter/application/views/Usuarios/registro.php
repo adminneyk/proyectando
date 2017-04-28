@@ -17,7 +17,7 @@
     $clave = array('name'=>'clave',
                      'id'=>'clave',
                      'type'=>'password');
-        echo form_open('empleados/nuevo_empleado');
+        echo form_open('login/');
         echo form_label('Nombres','nombres');
         echo form_input($nombres); echo "<bR>";
         echo form_label('Apellidos','apellidos');
