@@ -94,12 +94,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="account-wall">
                         <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
                              alt="">
-                        <form class="form-signin" action="<?=base_url()?>home">
-                            <input type="text" class="form-control" placeholder="Documento" required autofocus>
-                            <input type="password" class="form-control" placeholder="Clave" required>
-                            <button class="btn btn-lg btn-primary btn-block" type="submit" >
-                                Ingresar</button>
-                        </form>
+        <?php
+                        $arrayform = array("class"=>"form-signin");  
+                        $arrayusuario=array("class"=>"form-control",
+                                            "id"=>"usuario",
+                                            "name"=>"usuario",
+                                            "placeholder"=>"Usuario");
+                        $arrayclave=array("class"=>"form-control",
+                                            "id"=>"clave",
+                                            "name"=>"clave",
+                                            "type"=>"password",
+                                            "placeholder"=>"Clave");
+                        $arrayboton=array("class"=>"btn btn-lg btn-primary btn-block");
+                        
+                        
+                        echo form_open(base_url().'Login/validar',$arrayform);
+                        echo form_error('usuario', '<div class="alert alert-danger">', '</div>');
+                        echo form_input($arrayusuario);
+                        echo form_error('clave', '<div class="alert alert-danger">', '</div>');
+                        echo form_input($arrayclave);
+                        echo form_submit('botonSubmit', 'Ingresar' ,$arrayboton);
+                        echo form_close();
+                        ?>
                     </div>
                     <a href="<?=base_url()?>Registro" class="text-center new-account">Registro de Usuarios </a>
 
