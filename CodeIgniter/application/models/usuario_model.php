@@ -19,9 +19,10 @@ class Usuario_model extends CI_Model{
             $id = $data->id_usuario;
             $idpefil= $data->id_perfil;
             $nombreperil= $data->nombre_perfil;
-            $usuario_data = array("nombre"=>"OMAR");
+            $usuario_data = array("id_usuario" => $id,
+                                  "nombre_perfil"=>$nombreperil,
+                                  "perfil"=>$idpefil);
             $this->session->set_userdata($usuario_data);
-           // redirect('usuarios/logueado');
            return 1;                   
         } else {
             return 0;

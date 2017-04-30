@@ -10,6 +10,9 @@ class Login extends CI_Controller {
 	
 	public function index()
 	{
+            if($this->session->userdata('id_usuario')!=""){
+                redirect(base_url().'home');
+            }
                 $this->load->helper('url');
                 $this->load->helper('form');
 		$this->load->view('Usuarios/formulario');
@@ -22,16 +25,23 @@ class Login extends CI_Controller {
               $this->load->library('form_validation');
               $this->form_validation->set_rules('usuario', 'Usuario', 'required|min_length[3]');
               $this->form_validation->set_rules('clave', 'Clave', 'required|min_length[3]');
+              $this->form_validation->set_message('required', 'El campo %s es obligatorio');
               if($this->form_validation->run() === true){
                   $res = $this->usuario_model->login($usuario,$clave);
                   if($res ==1){
                       redirect(base_url().'home');
                   }else{
-                      redirect('login');
+                      redirect(base_url().'login');
                   }
               }else{
                 $this->load->view("Usuarios/formulario");  
               }
                 
-	}        
+	}
+        
+        public function logout(){
+            $this->session->sess_destroy();
+            redirect(base_url().'login');
+            
+        } 
 }
